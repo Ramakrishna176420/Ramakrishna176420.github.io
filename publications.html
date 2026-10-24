@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Publications · Ramakrishna Pinninti</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ramakrishna Pinninti: AI/NLP Research Engineer at GREYC (CNRS / Université de Caen Normandie). Large language models, NLP, information retrieval.">
+<style>
+:root {
+  --bg: #ffffff; --ink: #494e52; --head: #2e3236; --muted: #7a8288; --rule: #e6e9eb;
+  --link: #2a7ea0; --link-hover: #1d5c76; --footer: #f2f3f3; --chip: #eef5f8;
+  --f-sans: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  --f-mono: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #16191c; --ink: #c9cfd4; --head: #eef1f3; --muted: #8d969d; --rule: #2b3035;
+  --link: #6cc0de; --link-hover: #9fd8ec; --footer: #1d2124; --chip: #1f2a30; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #16191c; --ink: #c9cfd4; --head: #eef1f3; --muted: #8d969d; --rule: #2b3035;
+  --link: #6cc0de; --link-hover: #9fd8ec; --footer: #1d2124; --chip: #1f2a30; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-sans); font-size: 16px; line-height: 1.6; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Masthead */
+.masthead { border-bottom: 1px solid var(--rule); background: var(--bg); }
+.masthead-inner { max-width: 1280px; margin: 0 auto; padding-block: 14px; display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; }
+.site-title { font-weight: 700; color: var(--head); font-size: 18px; }
+.site-title:hover { text-decoration: none; color: var(--link); }
+.masthead nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 15px; }
+.masthead nav a { color: var(--muted); padding-bottom: 2px; border-bottom: 2px solid transparent; }
+.masthead nav a:hover { color: var(--head); text-decoration: none; }
+.masthead nav a[aria-current="page"] { color: var(--head); border-bottom-color: var(--link); }
+
+/* Body grid */
+.layout { max-width: 1280px; margin: 0 auto; padding-block: 36px 56px; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 48px; }
+.sidebar { align-self: start; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); font-size: 14px; }
+.avatar { width: 170px; height: 170px; border-radius: 50%; overflow: hidden; border: 1px solid var(--rule); background: var(--chip); display: grid; place-items: center; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.avatar .initials { font-size: 52px; font-weight: 300; color: var(--link); letter-spacing: .02em; }
+.sidebar h2 { font-size: 22px; color: var(--head); margin: 14px 0 2px; font-weight: 700; line-height: 1.25; }
+.sidebar .bio { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+.author-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.author-links li { display: flex; align-items: center; gap: 9px; }
+.ico { width: 15px; height: 15px; fill: var(--muted); flex: none; }
+.author-links a { color: var(--ink); }
+.author-links a:hover { color: var(--link); }
+
+/* Content */
+.content { min-width: 0; max-width: 760px; }
+.content h1 { font-size: 30px; color: var(--head); margin: 0 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); line-height: 1.25; font-weight: 700; }
+.content h2 { font-size: 22px; color: var(--head); margin: 34px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); font-weight: 700; }
+.content h3 { font-size: 17px; color: var(--head); margin: 22px 0 4px; }
+.content p { margin: 0 0 14px; }
+.updated { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 14px; }
+.callout { background: var(--chip); border-left: 3px solid var(--link); padding: 10px 14px; margin: 0 0 18px; font-weight: 600; color: var(--head); }
+.content ul { padding-left: 22px; margin: 0 0 14px; }
+.content ul li { margin-bottom: 6px; }
+.news li b.date { color: var(--head); }
+
+/* Publications */
+.pub { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.pub:last-child { border-bottom: 0; }
+.pub-title { font-weight: 700; color: var(--head); font-size: 16.5px; line-height: 1.4; margin: 0 0 3px; }
+.pub-authors { margin: 0 0 3px; font-size: 15px; }
+.pub-authors b { color: var(--head); }
+.pub-venue { margin: 0; font-style: italic; font-size: 15px; }
+.tag { display: inline-block; font-style: normal; font-size: 12px; font-weight: 600; padding: 1px 7px; border-radius: 3px; background: var(--chip); color: var(--link); margin-left: 6px; vertical-align: 1px; }
+.pub-links { margin-top: 6px; font-size: 13.5px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+
+/* CV */
+.entry-head { display: flex; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; align-items: baseline; margin-top: 18px; }
+.entry-head h3 { margin: 0; }
+.when { color: var(--muted); font-size: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.where { color: var(--muted); font-size: 14.5px; margin: 0 0 6px; font-style: italic; }
+.skills { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 20px; margin: 0; font-size: 15px; }
+.skills dt { font-weight: 700; color: var(--head); }
+.skills dd { margin: 0; }
+.btn { display: inline-block; border: 1px solid var(--link); color: var(--link); padding: 6px 14px; border-radius: 4px; font-size: 14px; font-weight: 600; }
+.btn:hover { background: var(--link); color: var(--bg); text-decoration: none; }
+
+/* Contact */
+.email-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-family: var(--f-mono); font-size: 15px; color: var(--head); }
+.copy { font: 600 13px var(--f-sans); color: var(--link); background: transparent; border: 1px solid var(--rule); border-radius: 4px; padding: 3px 10px; cursor: pointer; }
+.copy:hover { border-color: var(--link); }
+
+/* Footer */
+.page-footer { background: var(--footer); border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+.page-footer-inner { max-width: 1280px; margin: 0 auto; padding-block: 22px; display: flex; flex-direction: column; gap: 6px; }
+.page-footer .follow { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; }
+.page-footer .follow strong { color: var(--head); }
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px 40px; }
+  .sidebar { position: static; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 4px 16px; align-items: start; }
+  .avatar { width: 96px; height: 96px; grid-row: span 2; }
+  .avatar .initials { font-size: 32px; }
+  .sidebar h2 { margin-top: 4px; }
+  .author-links { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: 8px 18px; margin-top: 8px; }
+  .content h1 { font-size: 26px; }
+}
+@media (max-width: 520px) {
+  .skills { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .skills dd { margin-bottom: 10px; }
+}
+</style>
+</head>
+<body>
+<header class="masthead gutter"><div class="masthead-inner">
+  <a class="site-title" href="index.html">Ramakrishna Pinninti</a>
+  <nav aria-label="Main"><a href="publications.html" aria-current="page">Publications</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></nav>
+</div></header>
+<div class="layout gutter">
+<aside class="sidebar">
+  <div class="avatar"><img src="photo.jpg" alt="Photo of Ramakrishna Pinninti" onerror="this.parentNode.innerHTML='&lt;span class=&quot;initials&quot;&gt;RP&lt;/span&gt;'"></div>
+  <h2>Ramakrishna Pinninti</h2>
+  <p class="bio">AI/NLP Research Engineer</p>
+  <ul class="author-links"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>Caen, France</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7v2h20V7L12 2zM4 11v7h3v-7H4zm6.5 0v7h3v-7h-3zM17 11v7h3v-7h-3zM2 20v2h20v-2H2z"/></svg><span>GREYC, CNRS &amp; Université de Caen Normandie</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:ramakrishna176420@gmail.com">Email</a></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-6.8 9.2V16c0 2.2 3 4 6.8 4s6.8-1.8 6.8-4v-3.8L12 16l-6.8-3.8z"/></svg><a href="https://scholar.google.com/citations?user=zZVio2wAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg><a href="https://github.com/Ramakrishna176420" target="_blank" rel="noopener">GitHub</a></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.7 13 12.7 14.3V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.6 2 3.6 4.7V19z"/></svg><a href="https://www.linkedin.com/in/ramakrishna-pinninti-192480196" target="_blank" rel="noopener">LinkedIn</a></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 7V3.5L18.5 9H14zM8 13h8v2H8v-2zm0 4h8v2H8v-2z"/></svg><a href="cv.pdf">CV (PDF)</a></li></ul>
+</aside>
+<main class="content">
+<h1>Publications</h1>
+<p>You can also find my articles on <a href="https://scholar.google.com/citations?user=zZVio2wAAAAJ&amp;hl=en" target="_blank" rel="noopener">my Google Scholar profile</a>.</p>
+<h2>2026</h2>
+<div class="pub"><p class="pub-title">Corrective Feedback-Driven Humor Generation for Tiny Language Models</p><p class="pub-authors"><b>R. Pinninti</b>, L.C. Routhu, D. Bandyopadhyay, G. Dias, A. Lechervy, J. Pantin, M. Hasanuzzaman, A. Ekbal</p><p class="pub-venue">Proceedings of AACL-IJCNLP 2026 (Main Conference)<span class="tag">Accepted</span></p></div>
+<div class="pub"><p class="pub-title">Dynamic Model Switching to Mitigate Outdated Knowledge in Large Language Models</p><p class="pub-authors"><b>R. Pinninti</b>, S. Kamila, A. Mazumder, M. Hasanuzzaman</p><p class="pub-venue">Proceedings of LREC 2026</p></div>
+<h2>2023</h2>
+<div class="pub"><p class="pub-title">Analysis and Prediction of Sea Ice Extent Using Statistical and Deep Learning Approach</p><p class="pub-authors"><b>R. Pinninti</b>, N. Dey, S.K. Abdul Alim, P.P. Singh</p><p class="pub-venue">ICAISA 2023, Lecture Notes, Springer, Singapore</p></div>
+<div class="pub"><p class="pub-title">Towards Building a Global Robust Model for Heart Disease Prediction</p><p class="pub-authors">B. Mali, S. Saha, D. Brahma, <b>R. Pinninti</b>, P.K. Singh</p><p class="pub-venue">ACM, 2023</p></div>
+<h2>2022</h2>
+<div class="pub"><p class="pub-title">GROUP: Global Robust and Privacy-Preserved Model for Diabetes Prediction</p><p class="pub-authors">A. Hota, <b>R. Pinninti</b>, M. Brahma, P.K. Singh</p><p class="pub-venue">IEEE TENSYMP 2022, India</p></div>
+</main>
+</div>
+<footer class="page-footer gutter"><div class="page-footer-inner">
+  <div class="follow"><strong>Follow:</strong> <a href="https://github.com/Ramakrishna176420" target="_blank" rel="noopener">GitHub</a> <a href="https://scholar.google.com/citations?user=zZVio2wAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> <a href="https://www.linkedin.com/in/ramakrishna-pinninti-192480196" target="_blank" rel="noopener">LinkedIn</a></div>
+  <div>© 2026 Ramakrishna Pinninti. Layout inspired by the AcademicPages theme.</div>
+</div></footer>
+
+</body>
+</html>
